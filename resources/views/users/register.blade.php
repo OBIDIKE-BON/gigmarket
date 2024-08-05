@@ -14,7 +14,9 @@
                 <label for="name" class="inline-block text-lg mb-2">
                     Name<x-required />
                 </label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="name" required />
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="name" required
+                    value="{{ old('name') }}" />
+
                 @error('name')
                     <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
                 @enderror
@@ -22,7 +24,8 @@
 
             <div class="mb-6">
                 <label for="email" class="inline-block text-lg mb-2">Email<x-required /></label>
-                <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email" required />
+                <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email" required
+                    value="{{ old('email') }}" />
 
                 @error('email')
                     <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
@@ -30,10 +33,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="password" class="inline-block text-lg mb-2">
-                    Password<x-required />
-                </label>
-                <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password" required />
+                <label for="password" class="inline-block text-lg mb-2">Password<x-required /></label>
+                <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password" required
+                    value="{{ old('password') }}" />
 
                 @error('password')
                     <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
@@ -41,11 +43,10 @@
             </div>
 
             <div class="mb-6">
-                <label for="password_confirmation" class="inline-block text-lg mb-2">
-                    Confirm Password<x-required />
-                </label>
+                <label for="password_confirmation" class="inline-block text-lg mb-2">Confirm
+                    Password<x-required /></label>
                 <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password_confirmation"
-                    required />
+                    required value="{{ old('password_confirmation') }}" />
 
                 @error('password_confirmation')
                     <p class="text-red-500 text-xs mt-1"> {{ $message }} </p>
@@ -53,9 +54,7 @@
             </div>
 
             <div class="mb-6">
-                <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                    Sign Up
-                </button>
+                <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">Sign Up</button>
             </div>
 
             <div class="mt-8">
